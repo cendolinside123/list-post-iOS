@@ -1,0 +1,27 @@
+name: PostsApp
+options:
+  bundleIdPrefix: com.example.hiring
+settings:
+  base:
+    IPHONEOS_DEPLOYMENT_TARGET: '16.0'
+    SWIFT_VERSION: '5.0'
+targets:
+  PostsApp:
+    type: application
+    platform: iOS
+    sources: [PostsApp]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.hiring.PostsApp
+        GENERATE_INFOPLIST_FILE: YES
+        TARGETED_DEVICE_FAMILY: '1,2'
+        SUPPORTS_MACCATALYST: NO
+  PostsAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [PostsAppTests]
+    dependencies:
+      - target: PostsApp
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
